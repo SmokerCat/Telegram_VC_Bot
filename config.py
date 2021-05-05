@@ -14,7 +14,7 @@ if not HEROKU:
     API_ID = 2599004
     API_HASH = "d556b9298469c3b68a2330ebe47f9587"
     SUDO_CHAT_ID = -1001487210215
-    OWNER_ID = 1482465554
+    OWNER_ID = 1604152296
 
 
 # don't make changes below this line
