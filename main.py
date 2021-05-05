@@ -63,12 +63,12 @@ async def joinvc(_, message):
     global chat_joined
     try:
         if chat_joined:
-            await send("__**Bot Is Already In Voice Chat.**__")
+            await send("__**I am also here.**__")
             return
         chat_id = message.chat.id
         await vc.start(chat_id)
         chat_joined = True
-        m = await send("__**Joined The Voice Chat.**__")
+        m = await send("__**I am Also here.**__")
     except Exception as e:
         print(str(e))
         await send(str(e))
@@ -78,15 +78,15 @@ async def joinvc(_, message):
 async def leavevc(_, message):
     global chat_joined
     if not chat_joined:
-        await send("__**Already Out Of Voice Chat.**__")
+        await send("__**I am going in.**__")
         return
     chat_joined = False
-    m = await send("__**Left The Voice Chat.**__")
+    m = await send("__**I am going in.**__")
 
 
 @app.on_message(filters.command("kill") & filters.user(owner_id))
 async def killbot(_, message):
-    await send("__**Killed!__**")
+    await send("__**Stopped!__**")
     quit()
 
 
@@ -289,7 +289,7 @@ async def ytplay(requested_by, query):
     m = await app.send_photo(
         chat_id=sudo_chat_id,
         caption=f"**Playing** __**[{title}]({link})**__ **Via YouTube.**",
-        photo="final.png",
+        photo="Nil",
     )
     os.remove("final.png")
     await asyncio.sleep(int(time_to_seconds(duration)))
@@ -336,7 +336,7 @@ async def send(text):
     return m
 
 
-print("\nBot Starting...\nFor Support Join https://t.me/PatheticProgrammers\n")
+print("\nBot Starting...\nFor Support Join https://t.me/ressomusiclog\n")
 
 
 app.run()
